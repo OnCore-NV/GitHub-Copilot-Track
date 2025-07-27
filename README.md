@@ -1,63 +1,73 @@
-# Team Lunch Voting App - Context Pack
+# GitHub Copilot Training Course
 
-## Overview
-This context pack contains all the information needed to build the Team Lunch Voting App with proper architecture, patterns, and standards.
+A comprehensive full-day training course for developers to master GitHub Copilot and AI-assisted development.
 
-## Files Included
+## 📁 Repository Contents
 
-1. **requirements.md** - Complete functional and non-functional requirements
-2. **tech-stack.md** - Technology choices and setup instructions
-3. **api-spec.yaml** - OpenAPI specification for all endpoints
-4. **database-schema.sql** - PostgreSQL schema with sample data
-5. **ui-mockup.md** - UI design, components, and styling guide
-6. **code-patterns.md** - Code examples and best practices
+```
+GitHubCopilotCourse/
+├── github-copilot-training.md    # Main presentation slides (Marp format)
+├── structure.md                  # Course structure and timing guide
+├── cronos-marp-template.md       # Marp theme template (Cronos branding)
+├── context-pack/                 # Exercise 2: Context Matters resources
+│   ├── README.md                 # Overview of context pack usage
+│   ├── requirements.md           # Team Lunch Voting App requirements
+│   ├── tech-stack.md            # Technology stack specifications
+│   ├── api-spec.yaml            # OpenAPI specification
+│   ├── database-schema.sql      # PostgreSQL database schema
+│   ├── ui-mockup.md             # UI design and components
+│   └── code-patterns.md         # Code examples and patterns
+└── Source/                       # Additional reference materials
+    └── Developer Productivity... # Background PDF on LLM training
+```
 
-## How to Use This Context
+### File Descriptions
 
-### With GitHub Copilot Agent Mode
+- **`github-copilot-training.md`** - The main presentation file containing all slides for the full-day course
+- **`structure.md`** - Detailed timing and exercise instructions for instructors
+- **`cronos-marp-template.md`** - Example of Cronos-themed Marp presentation
+- **`context-pack/`** - Complete documentation set used in Exercise 2 to demonstrate the importance of context when using AI tools
 
-1. **Attach all context files** when starting:
-   ```
-   @workspace Include all files from /context-pack
-   ```
+## 📖 Viewing the Presentation
 
-2. **Reference specific files** as needed:
-   ```
-   Following the patterns in @code-patterns.md, create the vote service
-   ```
+### Option 1: VS Code with Marp Extension (Recommended)
+1. Install the [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) extension
+2. Open `github-copilot-training.md` in VS Code
+3. Click the preview button or press `Ctrl+K V` (Windows/Linux) or `Cmd+K V` (Mac)
+4. For presentation mode, click the presentation icon in the preview toolbar
 
-3. **Use the API spec** for endpoints:
-   ```
-   Implement all endpoints defined in @api-spec.yaml
-   ```
+### Option 2: Marp CLI
+```bash
+# Install Marp CLI globally
+npm install -g @marp-team/marp-cli
 
-### Key Decisions Made
+# Generate HTML presentation
+marp github-copilot-training.md -o presentation.html
 
-- **Monorepo structure** for easier development
-- **Real-time updates** via WebSockets for live voting
-- **Anonymous voting** by default
-- **Trunk-based development** for Git workflow
-- **Auth0 ready** but disabled for local development
+# Generate PDF
+marp github-copilot-training.md -o presentation.pdf
 
-### Success Criteria
+# Serve presentation with live reload
+marp -s github-copilot-training.md
+```
 
-Your implementation should:
-- ✅ Allow restaurant suggestions (max 3 per user per day)
-- ✅ Enable voting between 9 AM and 11:30 AM
-- ✅ Show real-time vote updates
-- ✅ Handle tie-breaking with random selection
-- ✅ Work on mobile and desktop
-- ✅ Include basic tests
-- ✅ Follow the provided code patterns
+### Option 3: Export and Present
+1. Export to PDF or PPTX using Marp
+2. Use your preferred presentation software
+3. Note: Interactive features work best in HTML format
 
-### Common Pitfalls to Avoid
+## 🎨 Customization
 
-- Don't allow vote changes after submission
-- Don't show who voted for what (anonymous)
-- Don't forget the voting time window
-- Don't overlook the WebSocket setup for real-time updates
-- Don't skip the database constraints
+To adapt the presentation for your organization:
+1. Edit the CSS variables in the `github-copilot-training.md` header
+2. Replace Cronos branding with your own
+3. Update instructor contact information in the slides
+4. Add organization-specific examples and policies
 
-## Questions?
+## 📄 License
 
-If anything is unclear, the requirements.md file has the most detailed information about the business logic.
+This course material is provided as-is for educational purposes.
+
+---
+
+Created using [Marp](https://marp.app/) • Images from [Unsplash](https://unsplash.com/)

@@ -1,0 +1,226 @@
+openapi: 3.0.0
+info:
+  title: Team Lunch Voting API
+  version: 1.0.0
+  description: API for managing team lunch voting
+
+servers:
+  - url: http://localhost:8080/api
+    description: Local development server
+
+paths:
+  /restaurants:
+    get:
+      summary: Get all restaurants (from seed data or external API)
+      responses:
+        200:
+          description: List of available restaurants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+  
+  /suggestions:
+    get:
+      summary: Get today's restaurant suggestions
+      responses:
+        200:
+          description: Today's suggested restaurants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Suggestion'
+    
+    post:
+      summary: Suggest a restaurant for today
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                restaurantId:
+                  type: string
+                userId:
+                  type: string
+      responses:
+        201:
+          description: Suggestion created
+        400:
+          description: User has reached daily suggestion limit (3)
+  
+  /votes:
+    get:
+      summary: Get current vote counts
+      responses:
+        200:
+          description: Real-time vote counts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/VoteCount'
+    
+    post:
+      summary: Cast a vote
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                restaurantId:
+                  type: string
+                userId:
+                  type: string
+      responses:
+        201:
+          description: Vote recorded
+        400:
+          description: User has already voted or voting is closed
+  
+  /winner:
+    get:
+      summary: Get today's winner (available after 11:30 AM)
+      responses:
+        200:
+          description: Winning restaurant(s)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WinnerResult'
+        425:
+          description: Too early - voting hasn't closed yet
+  
+  /history:
+    get:
+      summary: Get voting history
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+            default: 0
+        - in: query
+          name: size
+          schema:
+            type: integer
+            default: 20
+      responses:
+        200:
+          description: Paginated voting history
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/HistoryEntry'
+                  totalElements:
+                    type: integer
+                  totalPages:
+                    type: integer
+
+  /ws:
+    get:
+      summary: WebSocket endpoint for real-time updates
+      description: |
+        Connect to receive real-time vote updates
+        Subscribe to: /topic/votes
+        Message format: VoteUpdate
+
+components:
+  schemas:
+    Restaurant:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
+        rating:
+          type: number
+          format: float
+        categories:
+          type: array
+          items:
+            type: string
+            enum: [Italian, Asian, American, Mexican, Vegetarian, Fast Food, Other]
+    
+    Suggestion:
+      type: object
+      properties:
+        id:
+          type: string
+        restaurant:
+          $ref: '#/components/schemas/Restaurant'
+        suggestedBy:
+          type: string
+        suggestedAt:
+          type: string
+          format: date-time
+    
+    VoteCount:
+      type: object
+      properties:
+        restaurantId:
+          type: string
+        restaurantName:
+          type: string
+        count:
+          type: integer
+    
+    WinnerResult:
+      type: object
+      properties:
+        winners:
+          type: array
+          items:
+            $ref: '#/components/schemas/Restaurant'
+        selectedWinner:
+          $ref: '#/components/schemas/Restaurant'
+        totalVotes:
+          type: integer
+        isTie:
+          type: boolean
+    
+    HistoryEntry:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        winner:
+          $ref: '#/components/schemas/Restaurant'
+        voteCount:
+          type: integer
+        totalParticipants:
+          type: integer
+        allResults:
+          type: array
+          items:
+            $ref: '#/components/schemas/VoteCount'
+    
+    VoteUpdate:
+      type: object
+      properties:
+        restaurantId:
+          type: string
+        newCount:
+          type: integer
+        timestamp:
+          type: string
+          format: date-time
