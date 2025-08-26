@@ -1591,6 +1591,20 @@ GPT models, Gemini Flash, Claude 4
 
 ---
 
+## Adding integrations using MCP servers
+
+### What is a Model Context Protocol Server
+- Provides a seamless integration between Copilot and external data sources and tools. 
+
+### Usecases for MCP servers
+- LLM's have a cut-off date for their training data. MCP-servers allow the LLM access to data after their cut-off date. E.g.: Access to the latest Maven/Nuget packages to check for compatibility issues, Access to the latest documentation, ... 
+- Give Copilot access to your own Azure (Devops) environments, ...
+- Examples: 
+    - https://mcpservers.org
+    - https://github.com/arvindand/maven-tools-mcp
+- How to enable: https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/extend-copilot-chat-with-mcp?tool=jetbrains
+---
+
 ## Prompt Templates
 
 ### Reusable Patterns for Success
