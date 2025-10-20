@@ -2597,9 +2597,45 @@ requirements.md, matching our code-patterns and using the ui-mock.md as a style 
 
 <!-- _class: title -->
 
-# Advanced GitHub Copilot Features
+# Thank You!
 
-<div class="subtitle">Extending Your AI Development Toolkit</div>
+<div class="subtitle">Happy Coding with GitHub Copilot!</div>
+
+![bg opacity:0.2](https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800)
+
+<div style="position: absolute; bottom: 60px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px;">
+
+</div>
+
+---
+
+<!-- _class: title -->
+
+# GitHub Copilot: Follow-up Session
+
+<div class="subtitle">Advanced Features & Extensions</div>
+
+![bg right:40% opacity:0.3](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800)
+
+<div style="position: absolute; bottom: 60px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px;">
+</div>
+
+---
+
+## Let's Check In
+
+### Your GitHub Copilot Journey So Far
+
+<div>
+
+**🗣️ Going Around the Room:**
+- How has your **experience** with GitHub Copilot been these last few weeks?
+- What has worked **well** for you?
+- What could have gone **better**?
+- Are there things that are still **unclear**?
+
+
+</div>
 
 ---
 
@@ -3054,18 +3090,4 @@ Execute all tasks according to the plan
 5. Test integration functionality
 
 </div>
-</div>
-
----
-
-<!-- _class: title -->
-
-# Thank You!
-
-<div class="subtitle">Happy Coding with GitHub Copilot!</div>
-
-![bg opacity:0.2](https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800)
-
-<div style="position: absolute; bottom: 60px; left: 60px; right: 60px; display: flex; justify-content: space-between; font-size: 14px;">
-
 </div>
