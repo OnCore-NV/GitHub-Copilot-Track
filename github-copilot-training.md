@@ -2684,34 +2684,41 @@ copilot -p "List my open PRs"
 
 ## Copilot CLI: Local Tasks
 
-### Transform Your Development Workflow
+<div class="columns">
+<div>
 
-**Code Management:**
+### Code Management
 ```bash
 # Make targeted changes
-"Change the background-color of H1 headings to dark blue"
+"Change H1 color to dark blue"
 
 # Review changes
-"Show me the last 5 changes made to CHANGELOG.md"
+"Show last 5 CHANGELOG.md changes"
 
 # Improve code quality
 "Suggest improvements to content.js"
 ```
 
-**Git Operations:**
+</div>
+<div>
+
+### Git Operations
 ```bash
 # Commit work
 "Commit the changes to this repo"
 
-# Handle mistakes
-"Revert the last commit, leaving changes unstaged"
+# Handle mistakes  
+"Revert last commit, keep unstaged"
 ```
 
-**Project Creation:**
+### Project Creation
 ```bash
-"Use create-next-app and tailwind to create a dashboard 
-tracking this project's build metrics"
+"Create Next.js + Tailwind dashboard 
+for build metrics"
 ```
+
+</div>
+</div>
 
 ---
 
@@ -2968,9 +2975,10 @@ Execute all tasks according to the plan
 
 ## MCP: Configuration Setup
 
-### Repository-Level Integration
+<div class="columns">
+<div>
 
-**JSON Configuration Structure:**
+### JSON Structure
 ```json
 {
   "mcpServers": {
@@ -2978,18 +2986,24 @@ Execute all tasks according to the plan
       "type": "local|http|sse",
       "command": "...",
       "args": [...],
-      "tools": ["tool1", "tool2", "*"],
+      "tools": ["tool1", "*"],
       "env": {...}
     }
   }
 }
 ```
 
-**Setup Steps:**
-1. Navigate to repository Settings → Copilot → Coding agent
-2. Add MCP configuration in JSON format
-3. Configure environment secrets (`COPILOT_MCP_*`)
-4. Validate through test issue assignment
+</div>
+<div>
+
+### Setup Steps
+1. **Settings** → Copilot → Coding agent
+2. **Add** MCP configuration (JSON)
+3. **Configure** secrets (`COPILOT_MCP_*`)
+4. **Validate** via test assignment
+
+</div>
+</div>
 
 ---
 
