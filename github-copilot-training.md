@@ -2597,6 +2597,469 @@ requirements.md, matching our code-patterns and using the ui-mock.md as a style 
 
 <!-- _class: title -->
 
+# Advanced GitHub Copilot Features
+
+<div class="subtitle">Extending Your AI Development Toolkit</div>
+
+---
+
+## GitHub Copilot CLI
+
+### Command Line AI Assistant
+
+<div class="columns">
+<div>
+
+**What is Copilot CLI?**
+- AI assistant directly in your terminal
+- Two modes: Interactive & Programmatic
+- Direct integration with GitHub.com
+- Autonomous tool execution
+
+**Key Benefits:**
+- ⚡ Stay in terminal workflow
+- 🔄 Iterative task building
+- 🤖 Complete complex operations
+- 📊 Access GitHub data seamlessly
+
+</div>
+<div>
+
+**Installation:**
+```bash
+# Install GitHub CLI extension
+gh extension install github/gh-copilot
+
+# Start interactive session
+copilot
+
+# Or use programmatic mode
+copilot -p "List my open PRs"
+```
+
+**Supported Platforms:**
+- Linux, macOS, Windows (WSL)
+- Available with Pro, Business & Enterprise
+
+</div>
+</div>
+
+---
+
+## Copilot CLI: Local Tasks
+
+### Transform Your Development Workflow
+
+**Code Management:**
+```bash
+# Make targeted changes
+"Change the background-color of H1 headings to dark blue"
+
+# Review changes
+"Show me the last 5 changes made to CHANGELOG.md"
+
+# Improve code quality
+"Suggest improvements to content.js"
+```
+
+**Git Operations:**
+```bash
+# Commit work
+"Commit the changes to this repo"
+
+# Handle mistakes
+"Revert the last commit, leaving changes unstaged"
+```
+
+**Project Creation:**
+```bash
+"Use create-next-app and tailwind to create a dashboard 
+tracking this project's build metrics"
+```
+
+---
+
+## Copilot CLI: GitHub Integration
+
+### Seamless GitHub.com Operations
+
+<div class="columns">
+<div>
+
+**Issue & PR Management:**
+- List your open pull requests
+- Check assigned issues
+- Create new issues automatically
+- Manage PR lifecycle
+
+**Example Commands:**
+```bash
+"List my open PRs"
+
+"Start working on issue #1234 
+in a new branch"
+
+"Merge all open PRs I created 
+in owner/repo"
+```
+
+</div>
+<div>
+
+**Advanced Workflows:**
+- Create pull requests with file changes
+- Review PR code changes
+- Set up GitHub Actions workflows
+- Find specific workflow patterns
+
+**Security Features:**
+- Trusted directory prompts
+- Tool approval system
+- Scoped permissions
+- Risk mitigation options
+
+</div>
+</div>
+
+---
+
+## Copilot CLI: Security & Best Practices
+
+### Safe AI Command Execution
+
+<div class="columns">
+<div>
+
+**Security Considerations:**
+- ⚠️ **Trusted Directories** - Only launch from safe locations
+- 🔐 **Tool Approval** - Review commands before execution
+- 🛡️ **Automatic Approval Options** - Use carefully
+- 🔒 **Risk Mitigation** - Consider restricted environments
+
+**Approval Options:**
+```bash
+--allow-all-tools    # All tools
+--allow-tool 'shell' # Specific tools
+--deny-tool 'rm'     # Block dangerous commands
+```
+
+</div>
+<div>
+
+**Best Practices:**
+- Never launch from home directory
+- Review suggestions carefully
+- Use in sandboxed environments
+- Set up appropriate tool restrictions
+- Understand security implications
+
+**Models:**
+- Default: Claude Sonnet 4
+- Premium requests count applies
+- Use `/model` to change models
+- Use `/feedback` for improvements
+
+</div>
+</div>
+
+---
+
+## SpecKit: Spec-Driven Development
+
+### Build High-Quality Software Faster
+
+<div class="columns">
+<div>
+
+**What is SpecKit?**
+- Open-source toolkit for structured development
+- Focuses on **what** before **how**
+- Specifications become executable
+- Intent-driven development approach
+
+**Core Philosophy:**
+- 📋 Specifications define outcomes
+- 🔄 Multi-step refinement process
+- 🎯 Rich specification creation
+- 🚀 Predictable results over "vibe coding"
+
+</div>
+<div>
+
+**Installation:**
+```bash
+# Persistent installation
+uv tool install specify-cli \
+  --from git+https://github.com/github/spec-kit.git
+
+# One-time usage
+uvx --from git+https://github.com/github/spec-kit.git \
+  specify init <PROJECT_NAME>
+```
+
+**Supported AI Agents:**
+✅ GitHub Copilot, Claude Code, Cursor, Windsurf, Gemini CLI, and more
+
+</div>
+</div>
+
+---
+
+## SpecKit: Development Workflow
+
+### Structured 6-Step Process
+
+<div class="columns">
+<div>
+
+**1. Project Initialization**
+```bash
+specify init my-project --ai copilot
+```
+
+**2. Establish Principles**
+```bash
+/speckit.constitution
+```
+Create governing principles for code quality, testing standards, UX consistency
+
+**3. Create Specifications**
+```bash
+/speckit.specify
+```
+Describe **what** you want to build, focus on outcomes
+
+</div>
+<div>
+
+**4. Technical Planning**
+```bash
+/speckit.plan
+```
+Define tech stack and architecture choices
+
+**5. Task Breakdown**
+```bash
+/speckit.tasks
+```
+Generate actionable task lists
+
+**6. Implementation**
+```bash
+/speckit.implement
+```
+Execute all tasks according to the plan
+
+</div>
+</div>
+
+---
+
+## SpecKit: Advanced Features
+
+### Enhanced Quality & Validation
+
+<div class="columns">
+<div>
+
+**Optional Quality Commands:**
+- `/speckit.clarify` - Address underspecified areas
+- `/speckit.analyze` - Cross-artifact consistency checking
+- `/speckit.checklist` - Generate custom quality checklists
+
+**Development Phases:**
+- 🟢 **0-to-1 Development** - Generate from scratch
+- 🔄 **Creative Exploration** - Parallel implementations
+- 🛠️ **Iterative Enhancement** - Brownfield modernization
+
+</div>
+<div>
+
+**Key Benefits:**
+- Technology independence
+- Enterprise constraint support
+- User-centric development
+- Creative & iterative processes
+
+**Prerequisites:**
+- Linux/macOS/Windows
+- Supported AI coding agent
+- uv package manager
+- Python 3.11+, Git
+
+</div>
+</div>
+
+---
+
+## Model Context Protocol (MCP)
+
+### Extending Copilot with External Data
+
+<div class="columns">
+<div>
+
+**What is MCP?**
+- Protocol for connecting AI to external data sources
+- Extends GitHub Copilot coding agent capabilities
+- JSON-based configuration
+- Autonomous tool execution
+
+**Key Concepts:**
+- **MCP Servers** provide tools & data
+- **Repository-level configuration** 
+- **Secure environment variables**
+- **Tool allowlisting for safety**
+
+</div>
+<div>
+
+**Integration Benefits:**
+- 🔗 Connect to external APIs
+- 📊 Access databases and services
+- 🛠️ Custom tool integration
+- 🔄 Seamless workflow enhancement
+
+**Supported Server Types:**
+- **Local** - Run commands locally
+- **HTTP** - REST API endpoints
+- **SSE** - Server-sent events
+
+</div>
+</div>
+
+---
+
+## MCP: Configuration Setup
+
+### Repository-Level Integration
+
+**JSON Configuration Structure:**
+```json
+{
+  "mcpServers": {
+    "SERVER_NAME": {
+      "type": "local|http|sse",
+      "command": "...",
+      "args": [...],
+      "tools": ["tool1", "tool2", "*"],
+      "env": {...}
+    }
+  }
+}
+```
+
+**Setup Steps:**
+1. Navigate to repository Settings → Copilot → Coding agent
+2. Add MCP configuration in JSON format
+3. Configure environment secrets (`COPILOT_MCP_*`)
+4. Validate through test issue assignment
+
+---
+
+## MCP: Popular Integrations
+
+### Real-World Examples
+
+<div class="columns">
+<div>
+
+**Sentry Integration:**
+```json
+{
+  "mcpServers": {
+    "sentry": {
+      "type": "local",
+      "command": "npx",
+      "args": ["@sentry/mcp-server@latest"],
+      "tools": ["get_issue_details"],
+      "env": {
+        "SENTRY_ACCESS_TOKEN": "COPILOT_MCP_SENTRY_TOKEN"
+      }
+    }
+  }
+}
+```
+
+**Azure Services:**
+- Azure Cosmos DB access
+- Azure Storage integration  
+- Seamless Azure DevOps connection
+
+</div>
+<div>
+
+**Notion Integration:**
+```json
+{
+  "mcpServers": {
+    "notionApi": {
+      "type": "local",
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "mcp/notion"],
+      "env": {
+        "NOTION_API_KEY": "COPILOT_MCP_NOTION_KEY"
+      },
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+**Other Popular Servers:**
+- Cloudflare services
+- Custom database connections
+- API integrations
+
+</div>
+</div>
+
+---
+
+## MCP: Security & Best Practices
+
+### Safe External Integrations
+
+<div class="columns">
+<div>
+
+**Security Considerations:**
+- 🔐 **Environment Secrets** - Use `COPILOT_MCP_*` prefix
+- 🎯 **Tool Allowlisting** - Specify exact tools, avoid `"*"`
+- ⚠️ **Autonomous Execution** - No approval prompts
+- 🛡️ **Scope Limitation** - Minimal necessary permissions
+
+**Secret Management:**
+```bash
+# Repository Settings → Environments
+# Create 'copilot' environment
+# Add secrets with COPILOT_MCP_ prefix
+```
+
+</div>
+<div>
+
+**Best Practices:**
+- Start with read-only tools
+- Use specific tool names
+- Test thoroughly in safe environments
+- Monitor usage and access patterns
+- Regular security reviews
+
+**Validation Process:**
+1. Create test issue
+2. Assign to Copilot
+3. Check MCP server startup logs
+4. Verify tool availability
+5. Test integration functionality
+
+</div>
+</div>
+
+---
+
+<!-- _class: title -->
+
 # Thank You!
 
 <div class="subtitle">Happy Coding with GitHub Copilot!</div>
