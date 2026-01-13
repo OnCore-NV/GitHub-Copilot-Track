@@ -1030,7 +1030,7 @@ public class ProcessActiveItemsTests {
 
 ## Prompt Checklist
 
-### Effective Chat Strategies
+### Effective Strategies
 
 **DO:**
 - ✅ Select code before asking
@@ -1038,9 +1038,9 @@ public class ProcessActiveItemsTests {
 - ✅ Ask for explanations first
 - ✅ Request tests with changes
 - ✅ Iterate on suggestions
+- ✅ Use Chat or Agent Mode as preferred
 
 **DON'T:**
-- ❌ Use Agent Mode (Chat only!)
 - ❌ Accept without review
 - ❌ Rush through changes
 - ❌ Ignore test failures
@@ -1056,13 +1056,13 @@ public class ProcessActiveItemsTests {
 https://github.com/OnCore-NV/Refactoring-Kata
 
 **Exercise Goals:**
-1. 🔍 Understand pricing logic with Chat
+1. 🔍 Understand pricing logic
 2. 👃 Identify code smells
 3. ✅ Generate tests (90%+ coverage)
 4. 🔧 Refactor the code
 5. 🆕 Add bundle discount feature
 
-**Remember:** Chat only, no Agent Mode!
+**Remember:** Use Chat or Agent Mode - your choice!
 
 </div>
 <div>
@@ -1087,21 +1087,134 @@ Start (0:00)
 
 ---
 
+<!-- _class: title -->
+
+# Exercise 2: Sales Order Analysis
+
+<div class="subtitle">Analyze and Extend ABAP Application</div>
+
+![bg opacity:0.1](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800)
+
+---
+
+## Exercise #2 - Sales Order Application
+
+### Analyze and Extend with AI Assistance
+
+**Your Task:** Analyze and extend the Sales Order application
+
+**The Application:**
+- Found in package `$AI_PLAY_WITH_ONCORE<your initials>` and its super package
+- Data model located in package `S_NWDEMO_MODEL`
+
+**Time:** 30 minutes
+
+---
+
+## Understanding the Goal
+
+### Extension Requirements
+
+**Background:**
+Some Sales Orders are based upon a Purchase Order. You need to extend the class model to handle this relationship.
+
+**Technical Requirements:**
+
+1. **Class Model Extension:**
+   - Create a Sales Order subclass for Purchase Order-based Sales Orders
+   - Include an instance of the Purchase Order
+   - Modify the existing factory method accordingly
+
+2. **Application Program Adaptation:**
+   - For "Purchase Order based Sales Orders", add Purchase Orders as additional lines in the resulting internal table
+   - Maintain existing functionality
+
+---
+
+## Exercise Approach
+
+### Working with AI & ABAP
+
+**Mode:** Your choice - use what works best for ABAP & Copilot
+
+**Suggested Workflow:**
+1. Use AI to understand the existing application structure
+2. Explore the data model in `S_NWDEMO_MODEL`
+3. Identify the Sales Order class hierarchy
+4. Design the subclass extension with AI assistance
+5. Implement factory method changes
+6. Adapt the application program
+
+**Tips:**
+- Ask Copilot to explain ABAP code structure
+- Use Chat to understand relationships between classes
+- Let AI help identify where to make changes
+
+---
+
+<!-- _class: title -->
+
+# Hands-On Exercise Time
+
+<div class="subtitle">Choose Your Path</div>
+
+![bg opacity:0.1](https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800)
+
+---
+
+## Choose Your Exercise
+
+<div class="columns">
+<div>
+
+### Exercise 1: Refactor Rescue
+**For: C#, Java, JavaScript, Python, ... developers**
+
+**Scenario:** Supermarket Receipt System
+
+**Tasks:**
+- 🔍 Understand pricing logic with Chat
+- 👃 Identify code smells
+- ✅ Generate tests (90%+ coverage)
+- 🔧 Refactor the code
+- 🆕 Add bundle discount feature
+
+**Mode:** Your choice (Chat or Agent)
+**Time:** 30 minutes
+**Repo:** https://github.com/OnCore-NV/Refactoring-Kata
+
+</div>
+<div>
+
+### Exercise 2: Sales Order Analysis
+**For: ABAP developers**
+
+**Scenario:** Sales Order Application
+
+**Tasks:**
+- 🔍 Analyze existing app structure
+- 📊 Explore data model
+- 🏗️ Create Sales Order subclass
+- 🔧 Modify factory method
+- 📝 Extend application program
+
+**Mode:** Your choice (Chat or Agent)
+**Time:** 30 minutes
+**Location:** `$AI_PLAY_WITH_ONCORE<your initials>`
+**Data model**: `package S_NWDEMO_MODEL`
+
+</div>
+</div>
+
+---
+
 ## Quick Shareback
 
-### Team Insights (2-3 teams)
-
-**Share Your Experience:**
+### **Share Your Experience:**
 1. What surprised you?
 2. Most useful prompt?
 3. Biggest challenge?
 4. Key learning?
-
-**Common Discoveries:**
-- Context matters immensely
-- Iterative prompting works best
-- Tests reveal hidden issues
-- AI explanations aid understanding
 
 ---
 
@@ -2300,7 +2413,10 @@ C) `// TODO: Add password from vault`
 
 ### Build with Minimal Context
 
-**Your Task:** 
+<div class="columns">
+<div>
+
+**Your Task:**
 "Build a Team Lunch Voting App with Agent Mode"
 
 **Basic Features:**
@@ -2310,6 +2426,24 @@ C) `// TODO: Add password from vault`
 
 **Time:** 30 minutes
 **Mode:** Agent Mode only
+
+</div>
+<div>
+
+**Your Task:**
+"Build a flight overview app with copilot"
+
+**Basic Features:**
+- Flight overview with drill-down to bookings
+- Use (/DMO/)SFLIGHT demo tables
+- Currency conversion for bookings
+
+**Technology:** RAP or ALV-report
+**Mode:** Chat or Agent
+**Time:** 30 minutes
+
+</div>
+</div>
 
 ---
 
